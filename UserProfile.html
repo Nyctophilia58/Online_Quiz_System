@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #eeecf3;
+            color: #faf4f4;
+            padding: 10px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f0edf8;
+        }
+
+        .logo {
+            font-size: 24px;
+            text-decoration: none;
+            color: #08aff1;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-list li {
+            margin-right: 20px;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            font-size: large;
+            color: #8357d6;
+            font-weight: bold;
+        }
+
+        .sign-out-button {
+            color: #7a6ba3;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #636768;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .container1 {
+            max-width: 800px;
+            margin: 10px auto;
+            padding: 20px;
+            background-color: #fffafa;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .container2 {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fffafa;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-image {
+            text-align: center;
+            flex: 1;
+        }
+
+        .profile-image img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .profile-image img:hover {
+            transform: scale(1.1); 
+        }
+
+        .profile-details {
+            flex: 2;
+            margin-left: 20px;
+        }
+
+        .profile-details h2 {
+            margin: 0;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .profile-details p {
+            margin: 10px 0;
+            color: #777;
+            font-size: 16px;
+        }
+
+        .edit-profile-button {
+            background-color: #08aff1;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .activity {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .activity-avatar {
+            flex: 1;
+        }
+
+        .activity-avatar img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .activity-details {
+            flex: 3;
+        }
+
+        .activity-details p {
+            margin: 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container1">
+                <ul class="nav-list">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Tracks</a></li>
+                    <li><a href="#">Leaderboard</a></li>
+                </ul>
+            </div>
+            <a href="#" class="sign-out-button">Sign Out</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container2">
+            <section class="profile">
+                <div class="profile-image">
+                    <img src="userImage.jpg" alt="Your Image">
+                </div>
+
+                <div class="profile-details">
+                    <h1 id="displayUsername">Your Username</h1>
+                    <p id="displayName">Your Name</p>
+                    <p id="displayEmail">Email: your@email.com</p>
+                    <p id="displayLocation">Location: Your City, Country</p>
+                    <p id="displayPronoun">Pronoun: Your Pronoun</p>
+                    <p id="displayJoinedDate">Joined Date: MM/DD/YYYY</p>
+                    <button class="edit-profile-button" onclick="editProfile()">Edit Profile</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const userData = JSON.parse(localStorage.getItem("userData"));
+    
+            if (userData) {
+                document.getElementById("displayUsername").textContent = userData.username || "Your Username";
+                document.getElementById("displayName").textContent = userData.name || "Your Name";
+                document.getElementById("displayEmail").textContent = userData.email ? "Email: " + userData.email : "Email: your@email.com";
+                document.getElementById("displayLocation").textContent = userData.location ? "Location: " + userData.location : "Location: Your City, Country";
+                document.getElementById("displayPronoun").textContent = userData.pronoun ? "Pronoun: " + userData.pronoun : "Pronoun: Your Pronoun";
+                document.getElementById("displayJoinedDate").textContent = userData.joinedDate ? "Joined Date: " + userData.joinedDate : "Joined Date: MM/DD/YYYY";
+            }
+        });
+    
+        function editProfile() {
+            const userData = JSON.parse(localStorage.getItem("userData"));
+    
+            if (userData) {
+                sessionStorage.setItem("editUserData", JSON.stringify(userData));
+            }
+    
+            window.location.href = "/home/nowshin/Documents/Online_Quiz_System/ProfileInformation.html";
+        }
+    
+        document.addEventListener("DOMContentLoaded", function () {
+        });
+    </script>
+    
+    
+</body>
+</html>
+

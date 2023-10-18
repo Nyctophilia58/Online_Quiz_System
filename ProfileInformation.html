@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #4c788a;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group button {
+            background-color: #08aff1;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-group button:hover {
+            background-color: #0070a6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Profile Information</h2>
+        <form id="profileForm">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location">
+            </div>
+            <div class="form-group">
+                <label for="pronoun">Pronoun:</label>
+                <select id="pronoun" name="pronoun">
+                    <option value="he">He/Him</option>
+                    <option value="she">She/Her</option>
+                    <option value="they">They/Them</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <button type="submit">Save Profile</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const profileForm = document.getElementById("profileForm");
+            const userData = JSON.parse(localStorage.getItem("userData"));
+
+            if (userData) {
+                document.getElementById("username").value = userData.username || "";
+                document.getElementById("name").value = userData.name || "";
+                document.getElementById("email").value = userData.email || "";
+                document.getElementById("location").value = userData.location || "";
+                document.getElementById("pronoun").value = userData.pronoun || "he";
+            }
+
+            profileForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+                const formData = new FormData(profileForm);
+
+                const formDataObject = {};
+                formData.forEach((value, key) => {
+                    formDataObject[key] = value;
+                });
+
+                localStorage.setItem("userData", JSON.stringify(formDataObject));
+
+                window.location.href = "/home/nowshin/Documents/Online_Quiz_System/UserProfile.html";
+            });
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>
