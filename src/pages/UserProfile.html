@@ -1,82 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
+    <link rel="stylesheet" href="AdminPanelStyle.css">
+	<link rel="stylesheet" href="AdminPanelResponsiveness.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            background-color: #f0f0e7;
             margin: 0;
             padding: 0;
         }
 
-        header {
-            background-color: #eeecf3;
-            color: #faf4f4;
-            padding: 10px 0;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #f0edf8;
-        }
-
-        .logo {
-            font-size: 24px;
-            text-decoration: none;
-            color: #08aff1;
-        }
-
-        .nav-list {
-            list-style: none;
-            display: flex;
-        }
-
-        .nav-list li {
-            margin-right: 20px;
-        }
-
-        .nav-list a {
-            text-decoration: none;
-            font-size: large;
-            color: #8357d6;
-            font-weight: bold;
-        }
-
-        .sign-out-button {
-            color: #7a6ba3;
-            font-weight: bold;
-            text-decoration: none;
-            padding: 10px 20px;
-            border: 2px solid #636768;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-right: 10px;
-        }
-
-        .container1 {
-            max-width: 800px;
-            margin: 10px auto;
-            padding: 20px;
-            background-color: #fffafa;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-
-        .container2 {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fffafa;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-
         .profile {
-            display: flex;
             align-items: center;
         }
 
@@ -86,8 +25,8 @@
         }
 
         .profile-image img {
-            width: 100px;
-            height: 100px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             object-fit: cover;
             transition: transform 0.3s;
@@ -98,7 +37,8 @@
 
         .profile-details {
             flex: 2;
-            margin-left: 20px;
+            margin-top: 30px;
+            margin-left: 50px;
         }
 
         .profile-details h2 {
@@ -114,7 +54,7 @@
         }
 
         .edit-profile-button {
-            background-color: #08aff1;
+            background-color: #351885;
             color: #ffffff;
             font-weight: bold;
             padding: 10px 20px;
@@ -123,52 +63,85 @@
             cursor: pointer;
         }
 
-        .activity {
-            display: flex;
-            margin-bottom: 20px;
+        .option1 {
+            border-left: 5px solid #010058af;
+            background-color: #010058af;
+            color: white;
+            cursor: pointer;
         }
-
-        .activity-avatar {
-            flex: 1;
-        }
-
-        .activity-avatar img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .activity-details {
-            flex: 3;
-        }
-
-        .activity-details p {
-            margin: 0;
-            font-size: 18px;
+        .option1:hover {
+            border-left: 5px solid #010058af;
+            background-color: #010058af;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar">
-            <div class="container1">
-                <ul class="nav-list">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Tracks</a></li>
-                    <li><a href="#">Leaderboard</a></li>
-                </ul>
+        <div class="logosec">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png" class="icn menuicn" id="menuicn" alt="menu-icon">
+            <div class="logo">Quizzy McQuizface</div>
+        </div>
+    
+        <div class="message">
+            <div class="circle"></div>
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png" class="icn" alt="">
+            <div class="dp">
+                <img src="/src/images/userImage.jpg" class="dpicn" alt="dp">
             </div>
-            <a href="#" class="sign-out-button">Sign Out</a>
-        </nav>
+           
+        </div>
     </header>
+    
+    <div class="main-container">
+		<div class="navcontainer">
+			<nav class="nav">
+				<div class="nav-upper-options">
 
-    <main>
-        <div class="container2">
+                    <div class="nav-option option1">
+						<img src= "/src/images/profile.png" class="nav-img" alt="blog">
+						<h3> Profile</h3>
+					</div>
+
+					<div class="nav-option option2">
+						<img src="/src/images/dashboard.png" class="nav-img" alt="dashboard">
+						<h3> Dashboard</h3>
+					</div>
+
+					<div class="nav-option option3">
+						<img src= "/src/images/add_quiz.png" class="nav-img" alt="articles">
+						<h3> Add Quiz</h3>
+					</div>
+
+					<div class="nav-option option4">
+						<img src= "/src/images/statistics.png" class="nav-img" alt="report">
+						<h3> Statistics</h3>
+					</div>
+
+                    <div class="nav-option option5">
+						<img src= "/src/images/view_dataa.png" class="nav-img" alt="blog">
+						<h3> View Data</h3>
+					</div>
+
+					<div class="nav-option option6">
+						<img src= "https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png" class="nav-img" alt="settings">
+						<h3> Settings</h3>
+					</div>
+
+					<div class="nav-option logout">
+						<img src= "https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png" class="nav-img" alt="logout">
+						<h3>Logout</h3>
+					</div>
+
+				</div>
+			</nav>
+		</div>
+
+
+        <div class="main">
             <section class="profile">
                 <div class="profile-image">
-                    <img src="userImage.jpg" alt="Your Image">
+                    <img src="/src/images/userImage.jpg" alt="Your Image">
                 </div>
 
                 <div class="profile-details">
@@ -178,23 +151,27 @@
                     <p id="displayLocation">Location: Your City, Country</p>
                     <p id="displayPronoun">Pronoun: Your Pronoun</p>
                     <p id="displayJoinedDate">Joined Date: MM/DD/YYYY</p>
+                    <p id="displayAboutMe">About Me: Your About Me Text</p>
                     <button class="edit-profile-button" onclick="editProfile()">Edit Profile</button>
                 </div>
             </section>
         </div>
-    </main>
+    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const userData = JSON.parse(localStorage.getItem("userData"));
     
             if (userData) {
+                const fullName = `${userData.firstName || 'Your'} ${userData.lastName || 'Name'}`;
+                document.getElementById("displayName").textContent = fullName;
+
                 document.getElementById("displayUsername").textContent = userData.username || "Your Username";
-                document.getElementById("displayName").textContent = userData.name || "Your Name";
                 document.getElementById("displayEmail").textContent = userData.email ? "Email: " + userData.email : "Email: your@email.com";
                 document.getElementById("displayLocation").textContent = userData.location ? "Location: " + userData.location : "Location: Your City, Country";
                 document.getElementById("displayPronoun").textContent = userData.pronoun ? "Pronoun: " + userData.pronoun : "Pronoun: Your Pronoun";
                 document.getElementById("displayJoinedDate").textContent = userData.joinedDate ? "Joined Date: " + userData.joinedDate : "Joined Date: MM/DD/YYYY";
+                document.getElementById("displayAboutMe").textContent = userData.aboutMe ? "About Me: " + userData.aboutMe : "About Me: Your About Me Text";
             }
         });
     
@@ -205,11 +182,14 @@
                 sessionStorage.setItem("editUserData", JSON.stringify(userData));
             }
     
-            window.location.href = "/home/nowshin/Documents/Online_Quiz_System/ProfileInformation.html";
+            window.location.href = "ProfileInformation.html";
         }
-    
-        document.addEventListener("DOMContentLoaded", function () {
-        });
+        let menuicn = document.querySelector(".menuicn");
+        let nav = document.querySelector(".navcontainer");
+
+        menuicn.addEventListener("click", () => {
+            nav.classList.toggle("navclose");
+        })
     </script>
     
     

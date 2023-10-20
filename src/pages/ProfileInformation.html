@@ -2,27 +2,22 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Information</title>
+    <link rel="stylesheet" href="AdminPanelStyle.css">
+	<link rel="stylesheet" href="AdminPanelResponsiveness.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #f0f0e7;
             margin: 0;
             padding: 0;
         }
 
-        .container {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-
         h2 {
             text-align: center;
-            color: #4c788a;
+            color: #381fa7;
         }
 
         .form-group {
@@ -30,14 +25,23 @@
         }
 
         .form-group label {
+            padding-bottom: 10px;
             display: block;
             font-weight: bold;
         }
 
-        .form-group input, .form-group select {
+        .form-group input {
+            width: 98%;
+            padding: 10px;
+            border: 1px solid #6b3e3e;
+            border-radius: 5px;
+
+        }
+
+        .form-group select {
             width: 100%;
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #6b3e3e;
             border-radius: 5px;
         }
 
@@ -55,39 +59,135 @@
         .form-group button:hover {
             background-color: #0070a6;
         }
+
+        .form-group textarea{
+            width: 100%;
+            height: 100px;
+            border-radius: 5px;
+            border: 1px solid #6b3e3e;
+        }
+        .profile-update{
+            background-color: #351885;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .option1 {
+            border-left: 5px solid #010058af;
+            background-color: #010058af;
+            color: rgb(250, 246, 246);
+            cursor: pointer;
+        }
+        .option1:hover {
+            border-left: 5px solid #010058af;
+            background-color: #010058af;
+
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Profile Information</h2>
-        <form id="profileForm">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+    <header>
+        <div class="logosec">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png" class="icn menuicn" id="menuicn" alt="menu-icon">
+            <div class="logo">Quizzy McQuizface</div>
+        </div>
+    
+        <div class="message">
+            <div class="circle"></div>
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png" class="icn" alt="">
+            <div class="dp">
+                <img src="/src/images/userImage.jpg" class="dpicn" alt="dp">
             </div>
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="location">Location:</label>
-                <input type="text" id="location" name="location">
-            </div>
-            <div class="form-group">
-                <label for="pronoun">Pronoun:</label>
-                <select id="pronoun" name="pronoun">
-                    <option value="he">He/Him</option>
-                    <option value="she">She/Her</option>
-                    <option value="they">They/Them</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-            <button type="submit">Save Profile</button>
-        </form>
+           
+        </div>
+    </header>
+    <div class="main-container">
+		<div class="navcontainer">
+			<nav class="nav">
+				<div class="nav-upper-options">
+
+                    <div class="nav-option option1">
+						<img src= "/src/images/profile.png" class="nav-img" alt="blog">
+						<h3> Profile</h3>
+					</div>
+
+					<div class="nav-option option2">
+						<img src="/src/images/dashboard.png" class="nav-img" alt="dashboard">
+						<h3> Dashboard</h3>
+					</div>
+
+					<div class="nav-option option3">
+						<img src= "/src/images/add_quiz.png" class="nav-img" alt="articles">
+						<h3> Add Quiz</h3>
+					</div>
+
+					<div class="nav-option option4">
+						<img src= "/src/images/statistics.png" class="nav-img" alt="report">
+						<h3> Statistics</h3>
+					</div>
+
+                    <div class="nav-option option5">
+						<img src= "/src/images/view_dataa.png" class="nav-img" alt="blog">
+						<h3> View Data</h3>
+					</div>
+
+					<div class="nav-option option6">
+						<img src= "https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png" class="nav-img" alt="settings">
+						<h3> Settings</h3>
+					</div>
+
+					<div class="nav-option logout">
+						<img src= "https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png" class="nav-img" alt="logout">
+						<h3>Logout</h3>
+					</div>
+
+				</div>
+			</nav>
+		</div>
+    
+        <div class="main">
+            <h2>Profile Information</h2>
+            <form id="profileForm">
+                <div class="form-group">
+                    <label for="username">Username: </label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="firstName">First Name: </label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name: </label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class = "form-group">
+                    <label for="email">Email: </label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location: </label>
+                    <input type="text" id="location" name="location">
+                </div>
+                <div class="form-group">
+                    <label for="pronoun">Pronoun: </label>
+                    <select id="pronoun" name="pronoun">
+                        <option> Select Your Pronoun </option>
+                        <option value="He/Him">He/Him</option>
+                        <option value="She/Her">She/Her</option>
+                        <option value="They/Them">They/Them</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="aboutMe">About Me: </label>
+                    <textarea id="aboutMe" name="aboutMe"></textarea>
+                </div>
+                <button class="profile-update" type="submit">Save Profile</button>
+            </form>
+        </div>
     </div>
 
     <script>
@@ -97,10 +197,12 @@
 
             if (userData) {
                 document.getElementById("username").value = userData.username || "";
-                document.getElementById("name").value = userData.name || "";
+                document.getElementById("firstName").value = userData.firstName || "";
+                document.getElementById("lastName").value = userData.lastName || "";  
                 document.getElementById("email").value = userData.email || "";
                 document.getElementById("location").value = userData.location || "";
-                document.getElementById("pronoun").value = userData.pronoun || "he";
+                document.getElementById("pronoun").value = userData.pronoun || "";
+                document.getElementById("aboutMe").value = userData.aboutMe || "";
             }
 
             profileForm.addEventListener("submit", function (e) {
@@ -114,11 +216,16 @@
 
                 localStorage.setItem("userData", JSON.stringify(formDataObject));
 
-                window.location.href = "/home/nowshin/Documents/Online_Quiz_System/UserProfile.html";
+                window.location.href = "UserProfile.html";
             });
         });
+        let menuicn = document.querySelector(".menuicn");
+        let nav = document.querySelector(".navcontainer");
+
+        menuicn.addEventListener("click", () => {
+            nav.classList.toggle("navclose");
+        })
+
     </script>
-</body>
-</html>
 </body>
 </html>
