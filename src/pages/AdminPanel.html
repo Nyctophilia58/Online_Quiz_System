@@ -43,41 +43,48 @@
 		<div class="navcontainer">
 			<nav class="nav">
 				<div class="nav-upper-options">
-
-                    <div class="nav-option option1">
-						<img src= "/src/images/profile.png" class="nav-img" alt="blog">
-						<h3> Profile</h3>
-					</div>
-
-					<div class="nav-option option2">
-						<img src="/src/images/dashboard.png" class="nav-img" alt="dashboard">
-						<h3> Dashboard</h3>
-					</div>
-
-					<div class="nav-option option3">
-						<img src= "/src/images/add_quiz.png" class="nav-img" alt="articles">
-						<h3> Add Quiz</h3>
-					</div>
-
-					<div class="nav-option option4">
-						<img src= "/src/images/statistics.png" class="nav-img" alt="report">
-						<h3> Statistics</h3>
-					</div>
-
-                    <div class="nav-option option5">
-						<img src= "/src/images/view_dataa.png" class="nav-img" alt="blog">
-						<h3> View Data</h3>
-					</div>
-
-					<div class="nav-option option6">
-						<img src= "https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png" class="nav-img" alt="settings">
-						<h3> Settings</h3>
-					</div>
-
-					<div class="nav-option logout">
-						<img src= "https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png" class="nav-img" alt="logout">
-						<h3>Logout</h3>
-					</div>
+                    <a href="UserProfile.html">
+							<div class="nav-option option1">
+							<img src= "/src/images/profile.png" class="nav-img" alt="blog">
+							<h3> Profile</h3>
+						</div>
+					</a>
+					<a href="AdminPanel.html">
+						<div class="nav-option option2">
+							<img src="/src/images/dashboard.png" class="nav-img" alt="dashboard">
+							<h3> Dashboard</h3>
+						</div>
+					</a>
+                    <a href="AddQuiz.html">
+						<div class="nav-option option3">
+							<img src= "/src/images/add_quiz.png" class="nav-img" alt="articles">
+							<h3> Add Quiz</h3>
+						</div>
+					</a>
+                    <a href="Statistics.html">
+						<div class="nav-option option4">
+							<img src= "/src/images/statistics.png" class="nav-img" alt="report">
+							<h3> Statistics</h3>
+						</div>
+					</a>
+					<a href="ViewData.html">
+						<div class="nav-option option5">
+							<img src= "/src/images/view_dataa.png" class="nav-img" alt="blog">
+							<h3> View Data</h3>
+						</div>
+					</a>
+					<a href="Settings.html">
+						<div class="nav-option option6">
+							<img src= "https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png" class="nav-img" alt="settings">
+							<h3> Settings</h3>
+						</div>
+					</a>
+                    <a href="LoginPage.html">
+						<div class="nav-option logout">
+							<img src= "https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png" class="nav-img" alt="logout">
+							<h3>Logout</h3>
+						</div>
+					</a>
 
 				</div>
 			</nav>
@@ -172,7 +179,7 @@
 
         menuicn.addEventListener("click", () => {
             nav.classList.toggle("navclose");
-        })
+        });
 
     </script>
 </body>
